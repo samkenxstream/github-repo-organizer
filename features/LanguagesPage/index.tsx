@@ -5,7 +5,7 @@ import {
 } from "@devexpress/dx-react-grid-material-ui";
 import { SortingState, IntegratedSorting } from "@devexpress/dx-react-grid";
 import Paper from "@material-ui/core/Paper";
-import { useRepositories } from "../useRepositories";
+import { useGitBookTopRepositories } from "../useGitBookTopRepositories";
 
 interface Repository {
   language: string | null;
@@ -25,7 +25,7 @@ const prepareLanguages = (repositories: Repository[]) => {
 };
 
 const LanguagesPage = () => {
-  const [repositories] = useRepositories();
+  const [repositories] = useGitBookTopRepositories();
   const languages = prepareLanguages(repositories);
   const data = Object.entries(languages).map(([key, value]) => ({
     language: key,

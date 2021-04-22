@@ -5,7 +5,7 @@ import {
 } from "@devexpress/dx-react-grid-material-ui";
 import { SortingState, IntegratedSorting } from "@devexpress/dx-react-grid";
 import Paper from "@material-ui/core/Paper";
-import { useRepositories } from "../useRepositories";
+import { useGitBookTopRepositories } from "../useGitBookTopRepositories";
 
 interface Repository {
   licenseNickname: string | null;
@@ -25,7 +25,7 @@ const prepareTags = (repositories: Repository[]) => {
 };
 
 const LicensesPage = () => {
-  const [repositories] = useRepositories();
+  const [repositories] = useGitBookTopRepositories();
   const tags = prepareTags(repositories);
   const data = Object.entries(tags).map(([key, value]) => ({
     license: key,

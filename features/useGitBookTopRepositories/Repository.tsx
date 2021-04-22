@@ -18,9 +18,15 @@ export type Repository = {
   issueCount: number;
   pullRequestCount: number;
   codeOfConduct: string | null;
+<<<<<<< HEAD:features/useRepositories/Repository.tsx
   defaultBranchName: string;
   watcherCount: number;
   diskUsage: number;
   releaseCount: number;
   homepage: string | null;
+||||||| parent of 2ae4c99... display gitbook top repos:features/useRepositories/Repository.tsx
+=======
+  ownerOrgRepoCount: number;
+  ownerOrgStarCount: number;
+>>>>>>> 2ae4c99... display gitbook top repos:features/useGitBookTopRepositories/Repository.tsx
 };

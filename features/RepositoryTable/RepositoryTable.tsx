@@ -31,7 +31,7 @@ import {
 } from "./DataTypeProviders";
 import NumberProvider from "./DataTypeProviders/NumberProvider";
 import { useState } from "react";
-import { useRepositories } from "../useRepositories";
+import { useGitBookTopRepositories } from "../useGitBookTopRepositories";
 
 const tableColumnExtensions = [
   { columnName: "topics", wordWrapEnabled: true },
@@ -39,6 +39,7 @@ const tableColumnExtensions = [
 ];
 
 const defaultHiddenColumns = [
+  "selected",
   "isPrivate",
   "isArchived",
   "isFork",
@@ -62,7 +63,7 @@ export default function RepositoryTable() {
   const [searchState, setSearchState] = useState<string>("");
   const [columnVisibilityState, setColumnVisibilityState] =
     useState<string[]>(defaultHiddenColumns);
-  const [repositories] = useRepositories();
+  const [repositories] = useGitBookTopRepositories();
 
   return (
     <Paper>
@@ -141,6 +142,7 @@ export default function RepositoryTable() {
             name: "codeOfConduct",
             title: "Code of Conduct",
           },
+<<<<<<< HEAD
           {
             name: "defaultBranchName",
             title: "Default Branch Name",
@@ -173,6 +175,17 @@ export default function RepositoryTable() {
               }
             },
           },
+||||||| parent of 2ae4c99... display gitbook top repos
+=======
+          {
+            name: "ownerOrgRepoCount",
+            title: "Number of repos on owner org",
+          },
+          {
+            name: "ownerOrgStarCount",
+            title: "Stars on the owner org's repos",
+          },
+>>>>>>> 2ae4c99... display gitbook top repos
         ]}
         rows={repositories}
       >

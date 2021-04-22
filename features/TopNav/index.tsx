@@ -1,5 +1,4 @@
-import { LoginButton, LoginStateSwitch } from "../UserLogin";
-import { useRepositories } from "../useRepositories";
+import { useGitBookTopRepositories } from "../useGitBookTopRepositories";
 import {
   AppBar,
   Toolbar,
@@ -21,27 +20,19 @@ const styles = () => ({
 });
 
 function TopNav({ classes }: WithStyles<typeof styles>) {
-  const [_, refreshRepositories] = useRepositories();
+  const [_, refreshRepositories] = useGitBookTopRepositories();
 
   return (
     <AppBar>
       <Toolbar>
-        <LoginStateSwitch selectedLoginState={true}>
-          <DrawerMenuToggleButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          />
-        </LoginStateSwitch>
+        <DrawerMenuToggleButton
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="Menu"
+        />
         <Typography variant="h6" color="inherit" className={classes.grow}>
           GitHub Repo Organizer
         </Typography>
-        <LoginButton color="inherit" />
-        <LoginStateSwitch selectedLoginState={true}>
-          <Button onClick={() => refreshRepositories()} color="inherit">
-            Refresh
-          </Button>
-        </LoginStateSwitch>
       </Toolbar>
     </AppBar>
   );
