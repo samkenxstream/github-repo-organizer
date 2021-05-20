@@ -142,7 +142,6 @@ export default function RepositoryTable() {
             name: "codeOfConduct",
             title: "Code of Conduct",
           },
-<<<<<<< HEAD
           {
             name: "defaultBranchName",
             title: "Default Branch Name",
@@ -175,8 +174,6 @@ export default function RepositoryTable() {
               }
             },
           },
-||||||| parent of 2ae4c99... display gitbook top repos
-=======
           {
             name: "ownerOrgRepoCount",
             title: "Number of repos on owner org",
@@ -185,7 +182,6 @@ export default function RepositoryTable() {
             name: "ownerOrgStarCount",
             title: "Stars on the owner org's repos",
           },
->>>>>>> 2ae4c99... display gitbook top repos
         ]}
         rows={repositories}
       >

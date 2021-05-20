@@ -23,6 +23,4 @@ export type Repository = {
   diskUsage: number;
   releaseCount: number;
   homepage: string | null;
-  ownerOrgRepoCount: number;
-  ownerOrgStarCount: number;
 };

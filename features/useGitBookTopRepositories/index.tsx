@@ -36,6 +36,11 @@ function load(): Repository[] {
             (acc, el) => acc + el.stargazerCount,
             0
           ) || 0,
+        defaultBranchName: repo.defaultBranchRef?.name,
+        watcherCount: repo.watchers?.totalCount,
+        diskUsage: repo.diskUsage,
+        releaseCount: repo.releases?.totalCount,
+        homepage: repo.homepageUrl,
       }
   );
 

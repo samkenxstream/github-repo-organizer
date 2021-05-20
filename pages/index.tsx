@@ -1,13 +1,22 @@
-import { Box, Container } from "@material-ui/core";
-import Link from "next/link";
+import dynamic from "next/dynamic";
+import { LoginStateSwitch } from "../features/UserLogin";
+import LoginPage from "../features/LoginPage";
 
-export default function HomePage() {
+const DynamicRepos = dynamic(() => import("../features/ReposPage"), {
+  ssr: false,
+});
+
+export default function MyRepositories() {
   return (
-    <Container>
-      <Box style={{ marginTop: 50 }}>
-        <h1>GitHub Repo Organizer</h1>
-        <Link href="/my/repositories">My Repositories</Link>
-      </Box>
-    </Container>
+    <>
+      <LoginStateSwitch selectedLoginState={false}>
+        <LoginPage />
+      </LoginStateSwitch>
+      <LoginStateSwitch selectedLoginState={true}>
+        <DynamicRepos />
+      </LoginStateSwitch>
+    </>
   );
 }
+
+export {};
