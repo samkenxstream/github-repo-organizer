@@ -9,12 +9,7 @@ const DynamicRepos = dynamic(() => import("../features/ReposPage"), {
 export default function MyRepositories() {
   return (
     <>
-      <LoginStateSwitch selectedLoginState={false}>
-        <LoginPage />
-      </LoginStateSwitch>
-      <LoginStateSwitch selectedLoginState={true}>
-        <DynamicRepos />
-      </LoginStateSwitch>
+      <DynamicRepos />
     </>
   );
 }
